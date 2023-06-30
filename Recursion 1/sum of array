@@ -1,0 +1,30 @@
+def sumArray(arr):
+    # Please add your code here
+    sum=0
+    for ele in arr:
+        sum+=ele
+    return sum
+    
+
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+print(sumArray(arr))
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Recursive method
+def sumArray(arr):
+    n=len(arr)
+    if n==1:
+        return arr[0]
+    else:
+        return arr[n-1]+sumArray(arr[:n-1])
+
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+print(sumArray(arr))
