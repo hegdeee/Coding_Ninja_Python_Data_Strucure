@@ -1,0 +1,37 @@
+def checkNumber(arr, x):
+   
+    for ele in arr:
+        if ele==x:
+            return True
+          
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+x=int(input())
+if checkNumber(arr, x):
+    print('true')
+else:
+    print('false')
+-------  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  # recursive method
+  def checkNumber(arr, x):
+    l = len(arr)
+    if l == 1:
+        return x == arr[0]  
+    if arr[0] == x:
+        return True
+    return checkNumber(arr[1:], x)  
+
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n = int(input())
+arr = list(int(i) for i in input().strip().split(' '))
+x = int(input())
+if checkNumber(arr, x):
+    print('true')
+else:
+    print('false')
