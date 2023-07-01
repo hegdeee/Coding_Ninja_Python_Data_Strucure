@@ -1,0 +1,35 @@
+
+def mergeSort(arr, start, end):
+    # Base case: If the array has less than 2 elements, it's already sorted
+    if end - start < 2:
+        return
+    
+    # Divide the array into two halves and recursively sort them
+    mid = (start + end) // 2
+    mergeSort(arr, start, mid)
+    mergeSort(arr, mid, end)
+    
+    # Merge the two sorted halves
+    merged = []
+    left = start
+    right = mid
+    while left < mid and right < end:
+        if arr[left] < arr[right]:
+            merged.append(arr[left])
+            left += 1
+        else:
+            merged.append(arr[right])
+            right += 1
+    merged += arr[left:mid]  # Append remaining elements from left half
+    merged += arr[right:end]  # Append remaining elements from right half
+    
+    # Copy the merged array back into the original array
+    arr[start:end] = merged
+
+
+
+# Main
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+mergeSort(arr, 0, n)
+print(*arr)
