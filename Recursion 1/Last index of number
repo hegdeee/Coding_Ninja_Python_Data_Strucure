@@ -1,0 +1,27 @@
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+
+def last_index(arr, x, i=None):
+    # if i is not given, start searching from the end of the array
+    if i is None:
+        i = len(arr) - 1
+
+    # base case: if we reach the beginning of the array, x was not found
+    if i < 0:
+        return -1
+
+    # if we find x, return the current index
+    if arr[i] == x:
+        return i
+
+    # if we haven't found x yet, continue searching the rest of the array
+    return last_index(arr, x, i-1)
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+x=int(input())
+print(last_index(arr, x))
