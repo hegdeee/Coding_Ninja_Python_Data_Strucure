@@ -1,0 +1,39 @@
+def firstIndex(arr, x,i=0):
+    if i==len(arr):
+        return -1
+    elif arr[i]==x:
+        return i
+    else:
+        return firstIndex(arr, x,i+1)
+
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+x=int(input())
+print(firstIndex(arr, x))
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# by slicing list
+def index(a,x):
+    l=len(a)
+    if l==0:
+        return -1
+    
+    first=index(a[1:],x)
+    if a[0]==x:   
+        return 0
+    if first!=-1:
+        return first+1
+    else:
+        return -1
+
+# Main
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+x=int(input())
+print(firstIndex(arr, x))
