@@ -1,0 +1,17 @@
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+def gsum(s):
+    if s==0:
+        return 1
+    cal=1/(2**s)
+    r=gsum(s-1)
+    ans=r+cal
+    return ans
+s=int(input())
+x=gsum(s)
+print("%.5f" %x)
