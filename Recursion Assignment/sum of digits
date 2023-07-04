@@ -1,0 +1,18 @@
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+def sumOfDigits(n):
+    if n == 0:
+        return 0
+
+    smallAns = sumOfDigits(n // 10)
+    return smallAns + n % 10
+
+from sys import setrecursionlimit
+setrecursionlimit(11000)
+n = int(input())
+print(sumOfDigits(n))
