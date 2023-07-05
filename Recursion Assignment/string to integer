@@ -1,0 +1,7 @@
+def string_int(n):
+    a=int(n)
+    return a
+
+n=input()
+r=string_int(n)
+print(r)
