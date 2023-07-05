@@ -1,0 +1,23 @@
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+def pairStar(Input, Output, i=0):
+    Output = Output + Input[i]
+
+    if (i == len(Input) - 1):
+        print(Output)
+        return;
+
+    if (Input[i] == Input[i + 1]):
+        Output = Output + '*';
+
+    pairStar(Input, Output, i + 1);
+
+if __name__ == "__main__":
+    Input = input()
+    Output = ""
+    pairStar(Input, Output)
