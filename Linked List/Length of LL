@@ -1,0 +1,12 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+def length(head):
+    curr = head
+    cnt = 0
+    while curr is not None:
+        cnt += 1
+        curr = curr.next
+    return cnt
